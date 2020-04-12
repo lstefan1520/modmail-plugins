@@ -9,11 +9,11 @@ class MyCog(commands.Cog):
     async def on_message(self, message):
         print(message.content)
 
-    @command.command()
+    @commands.command()
     @commands.has_permissions(manage_roles=True)
     async def say(self, ctx, *, arg):
         await ctx.send(arg)
 
 
 def setup(bot):
-    bot.add_cog(MyCog(bot)) 
+    bot.add_cog(MyCog(bot))
