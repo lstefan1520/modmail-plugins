@@ -1,5 +1,5 @@
 import discord
-from discord.ext import commands, tasks
+from discord.ext import commands
 from discord import guild
 
 class MyCog(commands.Cog):
@@ -14,14 +14,14 @@ class MyCog(commands.Cog):
     async def say(self, ctx, *, message):
         await ctx.send(message)
     
-    @bot.event
+    @commands.Cog.listener()
     # this is where it checks when a message is sent if the message is in one of the channels under waiting for staff and if the message sent is from a staff channel will be moved to waiting for client
     async def on_message(self, message):
         channel = message.channel
         user = message.author
-        categoryitsin = discord.utils.get(guild.categories, id=537807191042949131)
-        categorytomoveto = discord.utils.get(guild.categories, id=667604143413788672)
-        if discord.utils.get(user.roles, name="Staff"):
+        categoryitsin = discord.utils.get(guild.categories, id=698826755397648414)
+        categorytomoveto = discord.utils.get(guild.categories, id=698826780798222386)
+        if discord.utils.get(user.roles, name="staff"):
             if message.channel.category == categoryitsin:
                 channel.edit(category=categorytomoveto)
                 
