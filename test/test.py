@@ -9,7 +9,7 @@ class MyCog(commands.Cog):
     async def on_message(self, message):
         print(message.content)
 
-    @client.command()
+    @command.command()
     @commands.has_permissions(manage_roles=True)
     async def say(self, ctx, *, arg):
         await ctx.send(arg)
