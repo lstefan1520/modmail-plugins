@@ -19,8 +19,8 @@ class MyCog(commands.Cog):
     async def on_message(self, message):
         channel = message.channel
         user = message.author
-        categoryitsin = discord.utils.get(discord.Guild.categories, id=698826755397648414)
-        categorytomoveto = discord.utils.get(discord.Guild.categories, id=698826780798222386)
+        categoryitsin = discord.utils.get(discord.Guild.categories, id=537807191042949131)
+        categorytomoveto = discord.utils.get(discord.Guild.categories, id=667604143413788672)
         if discord.utils.get(user.roles, name="staff"):
             if message.channel.category == categoryitsin:
                 channel.edit(category=categorytomoveto)
