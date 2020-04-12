@@ -1,5 +1,6 @@
 import discord
-from discord.ext import commands, tasks, guild
+from discord.ext import commands, tasks
+from discord import guild
 
 class MyCog(commands.Cog):
     def __init__(self, bot):
